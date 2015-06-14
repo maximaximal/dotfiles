@@ -1,0 +1,9 @@
+[submodule ".vim/bundle/Vundle.vim"]
+	path = .vim/bundle/Vundle.vim
+	url = https://github.com/gmarik/Vundle.vim
+[submodule "zsh"]
+	path = zsh
+	url = https://github.com/robbyrussell/oh-my-zsh
+[submodule "zsh-k"]
+	path = zsh-k
+	url = https://github.com/supercrabtree/k
