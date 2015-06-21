@@ -48,6 +48,7 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'godlygeek/tabular'
 Plugin 'rking/ag.vim'
+Plugin 'Yggdroot/indentLine'
 
 call vundle#end()
 
@@ -58,6 +59,11 @@ let g:airline_inactive_collapse=1
 
 " JavaScript Configs
 let javascript_enable_domhtmlcss=1
+
+" Indent Line Config
+let g:indentLine_color_term = 239
+let g:indentLine_color_gui = '#A4E57E'
+let g:indentLine_char = '¦'
 
 " Smartindention Configs
 set smartindent
