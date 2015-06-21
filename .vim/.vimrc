@@ -49,6 +49,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'godlygeek/tabular'
 Plugin 'rking/ag.vim'
 Plugin 'Yggdroot/indentLine'
+Plugin 'StanAngeloff/php.vim'
+Plugin 'captbaritone/better-indent-support-for-php-with-html'
 
 call vundle#end()
 
@@ -93,3 +95,17 @@ set number
 syntax on
 
 filetype plugin indent on
+
+" Override PHP syntax settings.
+function! PhpSyntaxOverride()
+    hi! def link phpDocTags  phpDefine
+    hi! def link phpDocParam phpType
+endfunction
+
+augroup phpSyntaxOverride
+    autocmd!
+    autocmd FileType php call PhpSyntaxOverride()
+augroup END
+
+" Mark the tab-line to be always visible (workaround)
+set showtabline=2
