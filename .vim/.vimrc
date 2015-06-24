@@ -45,6 +45,12 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'rust-lang/rust.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'godlygeek/tabular'
+Plugin 'rking/ag.vim'
+Plugin 'Yggdroot/indentLine'
+Plugin 'StanAngeloff/php.vim'
+Plugin 'captbaritone/better-indent-support-for-php-with-html'
 
 call vundle#end()
 
@@ -55,6 +61,11 @@ let g:airline_inactive_collapse=1
 
 " JavaScript Configs
 let javascript_enable_domhtmlcss=1
+
+" Indent Line Config
+let g:indentLine_color_term = 239
+let g:indentLine_color_gui = '#A4E57E'
+let g:indentLine_char = '¦'
 
 " Smartindention Configs
 set smartindent
@@ -84,3 +95,17 @@ set number
 syntax on
 
 filetype plugin indent on
+
+" Override PHP syntax settings.
+function! PhpSyntaxOverride()
+    hi! def link phpDocTags  phpDefine
+    hi! def link phpDocParam phpType
+endfunction
+
+augroup phpSyntaxOverride
+    autocmd!
+    autocmd FileType php call PhpSyntaxOverride()
+augroup END
+
+" Mark the tab-line to be always visible (workaround)
+set showtabline=2

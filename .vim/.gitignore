@@ -1,2 +1,5 @@
 # Ignore the bundle
-bundle/
+bundle/*
+
+# Do NOT ignore Vundle!
+!bundle/Vundle.git/
