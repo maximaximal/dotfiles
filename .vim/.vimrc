@@ -51,6 +51,7 @@ Plugin 'rking/ag.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'captbaritone/better-indent-support-for-php-with-html'
+Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()
 
