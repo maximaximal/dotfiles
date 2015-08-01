@@ -99,5 +99,8 @@ function ytaudio() {
     youtube-dl -f bestaudio --audio-quality 0 $1
 }
 
+# Do the last command as root using sudo. 
+alias fuckingdoit="sudo !!"
+
 # Add the k script for dir listings
 source ~/dotfiles/zsh-k/k.sh
