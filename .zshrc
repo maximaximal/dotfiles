@@ -94,5 +94,10 @@ if [[ -z $TMUX ]]; then
     fi
 fi
 
+# Downloads the best audio quality possible from the URL in the argument. 
+function ytaudio() {
+    youtube-dl -f bestaudio --audio-quality 0 $1
+}
+
 # Add the k script for dir listings
 source ~/dotfiles/zsh-k/k.sh
