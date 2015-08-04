@@ -96,7 +96,7 @@ fi
 
 # Downloads the best audio quality possible from the URL in the argument. 
 function ytaudio() {
-    youtube-dl -f bestaudio --audio-quality 0 $1
+    youtube-dl -f bestaudio --ignore-errors --audio-quality 0 $1
 }
 
 # Do the last command as root using sudo. 
