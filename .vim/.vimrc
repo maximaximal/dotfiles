@@ -53,6 +53,8 @@ Plugin 'StanAngeloff/php.vim'
 Plugin 'captbaritone/better-indent-support-for-php-with-html'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'evidens/vim-twig'
+Plugin 'rdnetto/YCM-Generator'
+Plugin 'tikhomirov/vim-glsl'
 
 call vundle#end()
 
@@ -95,6 +97,15 @@ set number
 
 " Colors
 syntax on
+
+" Angelscript Syntax
+au BufRead,BufNewFile *.as set syntax=cpp "angelscript
+au BufRead,BufNewFile *.angelscript set syntax=cpp "angelscript
+
+" GLSL syntax
+au BufRead,BufNewFile *.vs set syntax=glsl
+au BufRead,BufNewFile *.fs set syntax=glsl
+
 
 filetype plugin indent on
 

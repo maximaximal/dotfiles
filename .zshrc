@@ -94,5 +94,13 @@ if [[ -z $TMUX ]]; then
     fi
 fi
 
+# Downloads the best audio quality possible from the URL in the argument. 
+function ytaudio() {
+    youtube-dl -f bestaudio --ignore-errors --audio-quality 0 $1
+}
+
+# Do the last command as root using sudo. 
+alias fuckingdoit="sudo !!"
+
 # Add the k script for dir listings
 source ~/dotfiles/zsh-k/k.sh
