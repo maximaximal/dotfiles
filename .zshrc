@@ -104,3 +104,7 @@ alias fuckingdoit="sudo !!"
 
 # Add the k script for dir listings
 source ~/dotfiles/zsh-k/k.sh
+
+# Gem binary files.
+PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+
