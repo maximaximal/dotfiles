@@ -5,13 +5,11 @@ call plug#begin('~/.nvim/plugged')
 Plug 'ervandew/supertab'
 
 " Completion
-Plug 'Shougo/neocomplete.vim'
-Plug 'Shougo/vimproc.vim'
-Plug 'osyo-manga/vim-marching'
+Plug 'Valloric/YouCompleteMe'
 
 " NeoSnippet
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 " NerdCommenter & NerdTree
 Plug 'scrooloose/nerdtree'
@@ -28,13 +26,16 @@ Plug 'Yggdroot/indentLine'
 
 " Tag closer
 Plug 'jiangmiao/auto-pairs'
+Plug 'alvan/vim-closetag'
+
+" HTML Editing
+Plug 'Valloric/MatchTagAlways'
 
 " Airline
 Plug 'bling/vim-airline'
 
 " Git integration
 Plug 'tpope/vim-fugitive'
-Plug 'vim-gitgutter'
 
 " Highlighting
 Plug 'tikhomirov/vim-glsl'
@@ -44,6 +45,7 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'JulesWang/css.vim' 
 Plug 'pangloss/vim-javascript'
 
+Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
 
@@ -56,15 +58,8 @@ let g:ctrlp_user_command = {
   \ 'fallback': 'find %s -type f'
   \ }
 
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-" Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+" Closetag.vim
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml"
 
 " Highighting Options
 " -------------------
@@ -91,6 +86,24 @@ au BufRead,BufNewFile *.fs set syntax=glsl
 let g:airline_detect_modified=1
 let g:airline_detect_paste=1
 let g:airline_inactive_collapse=1
+
+" YCM + UltiSnips
+let g:ycm_key_list_select_completion=['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
+
+let g:UltiSnipsExpandTrigger="<Tab>"
+let g:UltiSnipsJumpForwardTrigger="<Tab>"                                           
+let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
+
+if has('gui_running')
+    set guifont=Inconsolata\ for\ Powerline\ 12
+
+    set background=dark
+    colorscheme solarized
+endif
+
+" Set line numbers
+set number
 
 " Indention
 " ---------
