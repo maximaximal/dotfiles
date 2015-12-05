@@ -36,6 +36,7 @@ Plug 'bling/vim-airline'
 
 " Git integration
 Plug 'tpope/vim-fugitive'
+Plug 'mhinz/vim-signify'
 
 " Highlighting
 Plug 'tikhomirov/vim-glsl'
@@ -44,6 +45,7 @@ Plug 'StanAngeloff/php.vim'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'JulesWang/css.vim' 
 Plug 'pangloss/vim-javascript'
+Plug 'rust-lang/rust.vim'
 
 Plug 'altercation/vim-colors-solarized'
 
@@ -94,6 +96,9 @@ let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
 let g:UltiSnipsExpandTrigger="<Tab>"
 let g:UltiSnipsJumpForwardTrigger="<Tab>"                                           
 let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
+
+set background=dark
+colorscheme solarized
 
 if has('gui_running')
     set guifont=Inconsolata\ for\ Powerline\ 12
