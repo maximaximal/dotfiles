@@ -95,6 +95,7 @@ au BufRead,BufNewFile *.fs set syntax=glsl
 let g:airline_detect_modified=1
 let g:airline_detect_paste=1
 let g:airline_inactive_collapse=1
+let g:airline_powerline_fonts = 1
 
 " YCM + UltiSnips
 let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
