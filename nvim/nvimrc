@@ -6,6 +6,7 @@ Plug 'ervandew/supertab'
 
 " Completion
 Plug 'Valloric/YouCompleteMe'
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 
 " NeoSnippet
 Plug 'SirVer/ultisnips'
@@ -33,6 +34,10 @@ Plug 'Valloric/MatchTagAlways'
 
 " Airline
 Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" Tmux Integration with Airline
+Plug 'edkolev/tmuxline.vim'
 
 " Git integration
 Plug 'tpope/vim-fugitive'
@@ -46,6 +51,8 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'JulesWang/css.vim' 
 Plug 'pangloss/vim-javascript'
 Plug 'rust-lang/rust.vim'
+Plug 'vim-scripts/django.vim'
+Plug 'chrisbra/csv.vim'
 
 Plug 'altercation/vim-colors-solarized'
 
@@ -90,12 +97,19 @@ let g:airline_detect_paste=1
 let g:airline_inactive_collapse=1
 
 " YCM + UltiSnips
-let g:ycm_key_list_select_completion=['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
+let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
+let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
+let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
+let g:ycm_complete_in_comments = 1 " Completion in comments
+let g:ycm_complete_in_strings = 1 " Completion in string<Paste>
 
-let g:UltiSnipsExpandTrigger="<Tab>"
-let g:UltiSnipsJumpForwardTrigger="<Tab>"                                           
-let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
+" let g:ycm_key_list_select_completion=['<C-n>', '<Down>']
+" let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
+
+let g:UltiSnipsExpandTrigger       = "<c-j>"
+let g:UltiSnipsJumpForwardTrigger  = "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-p>"
+let g:UltiSnipsListSnippets        = "<c-k>" "List possible snippets based on current file
 
 set background=dark
 colorscheme solarized

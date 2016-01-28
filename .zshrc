@@ -107,5 +107,6 @@ source ~/dotfiles/zsh-k/k.sh
 
 # Gem binary files.
 PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+PATH="~/.cargo/bin:$PATH"
 
 export EDITOR=nvim
