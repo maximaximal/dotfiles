@@ -110,3 +110,18 @@ PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 PATH="~/.cargo/bin:$PATH"
 
 export EDITOR=nvim
+
+# Rotate every image in the current folder by x degrees. 
+function imgRotate {
+    if [ -z ${1+x} ]; then
+        echo "imgRotate needs degrees as a parameter!"
+        return
+    fi
+
+    mkdir rotated/
+    for f in *
+    do
+        echo "Rotating $f by $1 degrees."
+        convert "$f" -rotate $1 "rotated/$f"
+    done
+}
