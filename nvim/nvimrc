@@ -70,6 +70,11 @@ let g:ctrlp_user_command = {
 " Closetag.vim
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml"
 
+" OmniComplete Default Settings
+
+set omnifunc=menu,longest
+set completeopt=longest,menuone
+
 " Highighting Options
 " -------------------
 

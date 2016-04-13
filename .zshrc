@@ -102,8 +102,14 @@ function ytaudio() {
 # Do the last command as root using sudo. 
 alias fuckingdoit="sudo !!"
 
+# Set the default dotfiles path.
+dotfiles_path="$HOME/dotfiles"
+
 # Add the k script for dir listings
-source ~/dotfiles/zsh-k/k.sh
+source $dotfiles_path/zsh-k/k.sh
+
+# Add syntax highlighting
+source $dotfiles_path/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Gem binary files.
 PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
